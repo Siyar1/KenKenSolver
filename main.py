@@ -254,8 +254,6 @@ puzzle1partial4b = Puzzle(4, [[2,Guess('b',1),Guess('b',4),'c'],
 puzzle1soln = Puzzle(4, [[2,1,4,3],[3,2,1,4],[4,3,2,1],[1,4,3,2]], [])
 
 
-## For part h
-
 puzzle1_first_guess = [
   Puzzle(4, [[Guess('a', 1),'b','b','c'],
              ['a','d','e','e'],
@@ -337,9 +335,6 @@ puzzle2c = Puzzle(4, [[4,2,'a','a'],
 ## ******** END TESTING VALUES ***************
 
 
-## ******** DO NOT CHANGE THESE FUNCTIONS ***************
-
-
 def fill_in_guess(puz, pos, val):
   '''
   Fills in the pos Position of puz's board with a guess with value val.
@@ -387,10 +382,6 @@ def solve_kenken(orig):
 
   return False
 
-## ******** END OF PROVIDED FUNCTIONS ***************
-
-
-# part a)
 
 def read_puzzle(fname):
   '''
@@ -488,7 +479,6 @@ result1.txt should contain:
 
 '''
 
-#part c)
 
 def find_blank(puz):
   '''
@@ -525,8 +515,6 @@ def find_blank(puz):
         return position
     return 'guess'
   return 'guess'
-
-#part d)
 
 
 def available_vals(puz, pos):
@@ -585,7 +573,6 @@ def available_vals(puz, pos):
   final_list.sort()
   return final_list
 
-# part e)
 
 def place_guess(brd, pos, val):
   '''
@@ -605,7 +592,6 @@ def place_guess(brd, pos, val):
   '''
   ## A copy of brd is assigned to res without any
   ## aliasing to avoid mutation of brd.
-  ## You should update res and return it
   res = copy.deepcopy(brd)
   y = pos.x
   x = pos.y
@@ -616,8 +602,6 @@ def place_guess(brd, pos, val):
     res[x][y] = Guess(res[x][y], val)
 
   return res
-
-# part f)
 
 
 def guess_valid(puz):
@@ -686,7 +670,6 @@ def guess_valid(puz):
     else:
       return False
 
-# part g)
 
 def apply_guess(puz):
   '''
@@ -706,7 +689,6 @@ def apply_guess(puz):
   '''
   ## A copy of puz is assigned to res without any
   ## aliasing to avoid mutation of puz.
-  ## You should update res and return it
   res = Puzzle(puz.size, copy.deepcopy(puz.board),
                copy.deepcopy(puz.constraints))
   first_symbol = puz.constraints[0][0]
@@ -723,8 +705,6 @@ def apply_guess(puz):
 
   res.constraints.remove(res.constraints[0])
   return res
-
-# part h)
 
 
 def neighbours(puz):
