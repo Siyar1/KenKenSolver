@@ -1,4 +1,4 @@
-import copy, pygame   #copies nested list to avoid mutating the consumed lists
+import copy  #copies nested list to avoid mutating the consumed lists
 
 ## A Board, B, is a (listof (listof (anyof Str Nat Guess))
 ## Requires:
@@ -765,5 +765,3 @@ def neighbours(puz):
       return [apply_guess(tmp)]
     else:
       return []
-
-print(solve_kenken(puzzle1))
